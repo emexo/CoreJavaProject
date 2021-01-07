@@ -1,9 +1,9 @@
 package com.coding.multithreading.automic;
 
 public class UpdateThread extends Thread {
-    private Counter counter;
+    private Counter2 counter;
 
-    public UpdateThread(Counter counter) {
+    public UpdateThread(Counter2 counter) {
         this.counter = counter;
     }
 

@@ -4,7 +4,7 @@ public class ThreadsTest {
     static final int NUMBER_THREADS = 100;
 
     public static void main(String[] args) throws InterruptedException {
-        Counter counter = new Counter();
+        Counter2 counter = new Counter2();
         System.out.println("Initial Counter = " + counter.get());
 
         UpdateThread[] threads = new UpdateThread[NUMBER_THREADS];

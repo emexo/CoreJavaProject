@@ -1,12 +1,5 @@
 package com.coding.multithreading.lock.readwrite;
 
-import java.util.*;
-
-/**
- * ReadWriteLockTest.java
- * Test program for understanding ReadWriteLock
- * @author www.codejava.net
- */
 public class ReadWriteLockTest {
     static final int READER_SIZE = 10;
     static final int WRITER_SIZE = 2;
