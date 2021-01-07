@@ -4,24 +4,25 @@ public class IfConditionExample {
 
     public static void main(String[] args) {
         IfConditionExample obj = new IfConditionExample();
-        obj.test(12);
+        boolean res = obj.test(10);
+        System.out.println("Response : "  + res);
     }
 
-    public void test(int input) {
+    public boolean test(int input) {
         if (input == 10) {
-            System.out.println("Valid Input");
+           return true;
         } else {
-            System.out.println("Invalid Input");
+            return false;
         }
     }
 
-    public void test(int input1, int input2) {
+    public void test1(int input1) {
         if (input1 == 10) {
-            System.out.println("Valid Input");
+            System.out.println("Valid Input" + input1);
         } else if (input1 == 20) {
-            System.out.println("Invalid Input");
+            System.out.println("Invalid Input" +input1);
         } else if (input1 == 30) {
-            System.out.println("Invalid Input");
+            System.out.println("Invalid Input" + input1);
         } else {
             System.out.println("Else");
         }

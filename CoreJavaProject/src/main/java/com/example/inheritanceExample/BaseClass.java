@@ -6,24 +6,28 @@ public class BaseClass {
 	
 	public BaseClass(){
 		this(8);
-		System.out.println("Parent Class constructor");
+		System.out.println("Parent Class default constructor");
 	}
 	
 	public BaseClass(int i){
-		System.out.println("Parent Class constructor "  +i);
+		System.out.println("Parent Class int constructor "  +i);
+	}
+
+	public BaseClass(float i){
+		System.out.println("Parent Class float constructor "  +i);
 	}
 	
 	public Number parentMethod(){
-		System.out.println("Parent mathod");
+		System.out.println("Parent method");
 		return null;
 	}
 	
 	public void parentMethod(int j){
-		System.out.println("Parent mathod with argument");
+		System.out.println("Parent method with argument");
 	}
 
 	public int parentMethod(float j){
-		System.out.println("Parent mathod with argument");
+		System.out.println("Parent method with argument");
 		return 8;
 	}
 

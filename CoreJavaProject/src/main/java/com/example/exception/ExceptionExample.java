@@ -1,15 +1,14 @@
 package com.example.exception;
 
 import java.io.FileInputStream;
-import java.io.IOException;
 
 public class ExceptionExample {
 
 	public static void main(String[] args) {
 		ExceptionExample obj = new ExceptionExample();
 
-		//int response = obj.divide(10,2);
-		//System.out.println(response);
+		int response = obj.divide(10,0);
+		System.out.println(response);
 
 		try {
 			obj.calculator();
@@ -20,8 +19,8 @@ public class ExceptionExample {
 
 	public void calculator() throws CustomException {
 		if(10==0){
-			throw new CustomException();
-		}
+			throw new CustomException("COB Date not Found");
+	}
 	}
 
 	public void read (){
@@ -36,17 +35,31 @@ public class ExceptionExample {
 	}
 
 	public void read1() throws Exception{
-		FileInputStream stream = null;
-		try{
-			stream = new FileInputStream("C://regu//input.txt");
+		//FileInputStream stream = null;
+		try(FileInputStream stream = new FileInputStream("C://regu//input.txt");){
+
 			while (stream.read()!= -1){
 				// read
 			}
+			System.exit(20);
 		} catch (Exception ex){
 			ex.printStackTrace();
-		} finally {
+		} /*finally {
 			stream.close();
+		}*/
+	}
+
+	public int divide(int input1, int input2){
+		int response =0;
+		try {
+			response = input1 / input2;
+		} finally {
+
 		}
+
+		System.out.println("Response :" + response);
+
+		return response;
 	}
 
 

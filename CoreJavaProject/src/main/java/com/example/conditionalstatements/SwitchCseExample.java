@@ -3,29 +3,36 @@ package com.example.conditionalstatements;
 public class SwitchCseExample {
     public static void main(String[] args) {
         SwitchCseExample obj = new SwitchCseExample();
-        obj.findDayOfWeek("Sunday");
+        String res = obj.findDayOfWeek("Wednesday");
+        System.out.println("Response : " + res);
     }
-    public void findDayOfWeek(String day){
+
+    public String findDayOfWeek(String day){
+        String response;
+
         switch (day) {
             case "Monday":
-                System.out.println("Monday");
+                response ="Monday";
                 break;
             case "Tuesday":
-                System.out.println("Tuesday");
+                response ="Tuesday";
                 break;
             case "Wednesday":
-                System.out.println("Wednesday");
+                response = "Wednesday";
                 break;
             case "Thursday":
-                System.out.println("Thursday");
+                response = "Thursday";
                 break;
             case "Friday":
-                System.out.println("Friday");
+                response ="Friday";
                 break;
 
             default:
-                System.out.println(day);
+                response = day;
+                break;
         }
+
+        return response;
     }
 
 

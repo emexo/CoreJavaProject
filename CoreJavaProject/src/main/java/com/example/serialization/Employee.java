@@ -1,8 +1,8 @@
 package com.example.serialization;
 
-import java.io.Serializable;
+import java.io.*;
 
-public class Employee implements Serializable {
+public class Employee implements Externalizable {
     private int empId;
     private transient String empName;
     public  static final String ORG_NAME = "INTEL";
@@ -22,5 +22,24 @@ public class Employee implements Serializable {
 
     public void setEmpName(String empName) {
         this.empName = empName;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "empId=" + empId +
+                ", empName='" + empName + '\'' +
+                '}';
+    }
+
+
+    @Override
+    public void writeExternal(ObjectOutput out) throws IOException {
+
+    }
+
+    @Override
+    public void readExternal(ObjectInput in) throws IOException, ClassNotFoundException {
+
     }
 }

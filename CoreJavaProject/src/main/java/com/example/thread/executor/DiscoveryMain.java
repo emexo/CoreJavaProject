@@ -17,8 +17,8 @@ public class DiscoveryMain {
 
         ipAddressList.forEach(ipAddr -> {
             Discovery discovery = new Discovery(ipAddr);
-           /* Future<String> response = service.submit(discovery);
-           try {
+           // Future<String> response = service.submit(discovery);
+           /*try {
                 System.out.println("Response :" + response.get());
             } catch (Exception e) {
                 e.printStackTrace();

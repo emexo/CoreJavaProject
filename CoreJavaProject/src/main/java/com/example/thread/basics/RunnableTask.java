@@ -13,9 +13,9 @@ public class RunnableTask implements  Runnable {
 
     @Override
     public void run() {
-        System.out.println("New Thread Start: " + Thread.currentThread().getName() + " IPAddress: " + ipAddress);
+        //System.out.println("New Thread Start: " + Thread.currentThread().getName() + " IPAddress: " + ipAddress);
         sharedResource.sharedMethod();
-        System.out.println("New Thread End: " + Thread.currentThread().getName() + " IPAddress: " + ipAddress);
+        //System.out.println("New Thread End: " + Thread.currentThread().getName() + " IPAddress: " + ipAddress);
 
     }
 

@@ -1,6 +1,5 @@
 package com.example.jdbc;
 
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -25,7 +24,7 @@ public class JdbcInsertFileOne {
             PreparedStatement statement = conn.prepareStatement(sql);
             statement.setString(1, "Tom");
             statement.setString(2, "Eagar");
-            InputStream inputStream = new FileInputStream(new File(filePath));
+            InputStream inputStream = new FileInputStream(filePath);
  
             statement.setBlob(3, inputStream);
  

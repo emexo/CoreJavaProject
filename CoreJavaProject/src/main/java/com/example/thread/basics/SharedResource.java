@@ -3,7 +3,7 @@ package com.example.thread.basics;
 public class SharedResource {
 
 
-    public synchronized void  sharedMethod() {
+    public  synchronized void  sharedMethod() {
         System.out.println("Shared Resource Start : " + Thread.currentThread().getName());
         try {
             //Thread.sleep(30000);
@@ -17,10 +17,10 @@ public class SharedResource {
 
     public  void  sharedMethod1() {
         System.out.println("Shared Resource Start : " + Thread.currentThread().getName());
-        synchronized(SharedResource.class) {
+        synchronized(SharedResource.class) {  //synchronized block
             try {
-                //Thread.sleep(30000);
-                wait(30000);
+                Thread.sleep(30000);
+                //wait(30000);
                 //Thread.yield();
             } catch (Exception e) {
                 e.printStackTrace();

@@ -1,9 +1,10 @@
 package com.example.inheritanceExample;
 
 public class DerivedClass extends BaseClass{
-	public DerivedClass() {
-		super(9);
+	public DerivedClass(int i) {
+		super(i);
 		System.out.println(noOfDoors);
+		parentMethod();
 	}
 	
 	@Override

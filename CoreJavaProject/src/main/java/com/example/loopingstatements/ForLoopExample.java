@@ -12,12 +12,21 @@ public class ForLoopExample {
         for(int i=0; i<input; i++) {
             System.out.println(i);
         }
+
     }
 
     public void testWhileLoop(int input){
+        int j =0;
+        while (j<input){
+            System.out.println(j);
+            j++;
+        }
+    }
+
+    public void testDoWhileLoop(int input){
         int i = 0;
         do {
-            System.out.println("test");
+            System.out.println(i);
             i++;
         } while(i<input);
     }

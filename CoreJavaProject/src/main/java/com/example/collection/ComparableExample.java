@@ -5,8 +5,8 @@ public class ComparableExample {
     public ComparableExample() {
     }
 
-    //public static void main(String[] args) {
-       /* ComparableExample comparable = new ComparableExample();
+    public static void main(String[] args) {
+        ComparableExample comparable = new ComparableExample();
 
         Employee employee1 = new Employee();
         employee1.setEmployeeName("Regu");
@@ -29,16 +29,16 @@ public class ComparableExample {
         list.add(employee3);
 
         // before java1.8
-        //Collections.sort(list);
+        //Collections.sort(list, new CompareByName());
 
         // from java 1.8
         // sort by employee id
         list.sort(Comparator.comparing(e -> e.getEmployeeId()));
         System.out.println("Sort Employee by employee id");
 
-        list.forEach(emp -> System.out.println("Emp Id : " + emp.getEmployeeId() + " " +
+       /* list.forEach(emp -> System.out.println("Emp Id : " + emp.getEmployeeId() + " " +
                 "Emp Name : " + emp.getEmployeeName() + " " +
-                "Emp Addredd : " + emp.getAddess()));
+                "Emp Addredd : " + emp.getAddess()));*/
 
         // sort by employee name
         list.sort(Comparator.comparing(e -> e.getEmployeeName()));
@@ -46,6 +46,6 @@ public class ComparableExample {
 
         list.forEach(emp -> System.out.println("Emp Id : " + emp.getEmployeeId() + " " +
                 "Emp Name : " + emp.getEmployeeName() + " " +
-                "Emp Addredd : " + emp.getAddess()));*/
-   // }
+                "Emp Addredd : " + emp.getAddess()));
+    }
 }

@@ -1,8 +1,5 @@
 package com.example.string;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class StringExample {
 
 	public static void main(String[] args) {
@@ -13,10 +10,10 @@ public class StringExample {
 		
 		//System.out.println(str);
 		
-		StringBuffer builder = new StringBuffer("hello ");
+		StringBuilder builder = new StringBuilder("hello ");
 		builder.append("world");
 		
-		System.out.println(builder.toString());
+		System.out.println(builder);
 		
 		/*List<String> list = new ArrayList<>();
 		list.add("regu");

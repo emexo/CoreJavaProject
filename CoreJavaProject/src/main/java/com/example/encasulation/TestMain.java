@@ -13,7 +13,7 @@ public class TestMain {
 		Employee emp1= new Employee();
 		emp1.setId(2);
 		emp1.setName("Ashis");
-		System.out.println(emp.getName());
+		System.out.println(emp1.getName());
 	}
 
 }

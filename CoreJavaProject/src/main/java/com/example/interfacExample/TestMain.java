@@ -5,8 +5,9 @@ public class TestMain {
 	public static void main(String[] args) {
 		Vechicle v = new SmallCar();
 		v.start();
+		v.stop();
 		v.print(); //calling default method
-		System.out.println(SmallCar.noOfWheels); // calling static variable
+		System.out.println(Vechicle.noOfWheels); // calling static variable
 	}
 
 }

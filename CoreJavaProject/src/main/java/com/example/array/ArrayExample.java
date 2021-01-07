@@ -7,13 +7,15 @@ public class ArrayExample {
     }
 
     public void test() {
-        int[] input = new int[5];
-        input[0] = 1;
-        input[1] =10;
-        input[2] = 12;
+        int[][] input = new int[5][5];
+        input[0][0] = 1;
+        input[0][1] =10;
+        input[0][2] = 12;
 
         for (int i=0; i<input.length; i++){
-            System.out.println(input[i]);
+            for (int j=0; j<input.length; j++) {
+                System.out.println(input[i][j]);
+            }
         }
     }
 

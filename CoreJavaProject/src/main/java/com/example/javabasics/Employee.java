@@ -13,13 +13,21 @@ public class Employee {
     public int empId;
     public String empName;
 
-
+    /**
+     * Default Constructor
+     */
     public Employee(){
         System.out.println("Default constructor");
     }
 
-    public Employee(String name, int i){
-        System.out.println("Default constructor");
+    /**
+     * Parameterized
+     * @param name
+     * @param i
+     */
+    public Employee(String name, int id){
+        this.empId = id;
+        this.empName = name;
     }
 
 
@@ -29,12 +37,13 @@ public class Employee {
     }
 
     /**
-     * Instance Method
+     * Instance method example
+     * @param i
+     * @return
      */
-    public int getEmployeeDetails(Integer i){
-        // local variable
-        int i1= 10;
-        System.out.println(i);
+    public int getEmployeeDetails(int i){
+        System.out.println(ORGANIZATION_NAME);
+        System.out.println(empId);
         return i;
     }
 
@@ -42,15 +51,20 @@ public class Employee {
      * Static method
      */
     public static String getOrganizationDetails(){
-        String str= "Organization Details";
+        // org details
+        String str= "Organization Details";  // org details
         return str;
 
     }
 
     public static String getOrganizationDetails1(){
         String str = "JPMC";
-
         return str;
+    }
+
+    public int add(Integer input1, Integer input2){
+        int output = input1+ input2;
+        return output;
     }
 
 }
