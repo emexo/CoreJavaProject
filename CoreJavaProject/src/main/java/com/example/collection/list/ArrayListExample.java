@@ -9,7 +9,7 @@ public class ArrayListExample {
     public static void main(String[] args) {
         ArrayListExample obj = new ArrayListExample();
         List<String>  list = obj.addElements("Chennai", "Bangalore", "Mumbai", "Pune","Mumbai");
-        Collections.sort(list);
+        Collections.sort(list, Collections.reverseOrder());
         //obj.getElements(list);
         //obj.addElementsFromArray("Chennai", "Bangalore", "Mumbai", "pune");
         //obj.getElementsByForEach(list);
@@ -32,7 +32,7 @@ public class ArrayListExample {
      * @return
      */
     public List<String> addElements(String input1, String input2, String input3,String input4, String input5) {
-        List<String> list  = new ArrayList<>();
+        ArrayList<String> list  = new ArrayList<>();
         list.add(input1);
         list.add(input2);
         list.add(input3);
@@ -87,7 +87,8 @@ public class ArrayListExample {
      * @param list
      */
     public void getElementsByIterator(List<String> list) {
-        Iterator iterator = list.iterator();
+        Iterator<String> iterator = list.iterator();
+
         while(iterator.hasNext()){
             System.out.println(iterator.next());
         }
@@ -98,7 +99,7 @@ public class ArrayListExample {
      * @param list
      */
     public void getElementsByListIterator(List<String> list) {
-        ListIterator listIterator = list.listIterator();
+        ListIterator<String> listIterator = list.listIterator();
 
         while(listIterator.hasNext()){
             System.out.println(listIterator.next());
@@ -116,6 +117,7 @@ public class ArrayListExample {
      */
     public void getElementsByLambdaExpression(List<String> list) {
         list.forEach(data -> System.out.println(data));
+        // list.forEach(System.out::println);
     }
 
     /**
