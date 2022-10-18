@@ -1,8 +1,8 @@
-package com.example.jdbc;
+package com.emexo.jdbc;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * User DAO
@@ -16,10 +16,9 @@ public class UserDAO {
      * @throws SQLException
      */
     public String saveUser(User user) throws SQLException {
-        Connection conn = null;
         String response = null;
-        try {
-            conn = DBConnection.getConnection();
+        try(Connection conn = DBConnection.getConnection();) {
+
             String sql = "INSERT INTO Users (username, password, fullname, email) VALUES (?, ?, ?, ?)";
 
             PreparedStatement statement = conn.prepareStatement(sql);
@@ -35,8 +34,6 @@ public class UserDAO {
 
         } catch (Exception ex) {
             ex.printStackTrace();
-        } finally {
-            conn.close();
         }
 
         return response;
@@ -103,5 +100,31 @@ public class UserDAO {
         }
 
         return response;
+    }
+
+    public List<User> getAllUsers() throws SQLException {
+        Connection conn = null;
+        List<User> users = null;
+        try {
+            conn = DBConnection.getConnection();
+            String sql = "SELECT * FROM Users";
+
+            Statement statement = conn.createStatement();
+            ResultSet result = statement.executeQuery(sql);
+
+            users = new ArrayList<>();
+            while (result.next()) {
+                User user = new User();
+                user.setFullName(result.getString("fullname"));
+                user.setEmail(result.getString("email"));
+                users.add(user);
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            conn.close();
+        }
+
+        return users;
     }
 }
