@@ -1,4 +1,4 @@
-package com.example.thread.executor;
+package com.emexo.thread.executor;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -7,7 +7,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
-public class DiscoveryMain {
+public class  DiscoveryMain {
     public static void main(String[] args) throws InterruptedException {
         ExecutorService service = Executors.newFixedThreadPool(2);
 
@@ -15,26 +15,26 @@ public class DiscoveryMain {
         List<String> ipAddressList = Arrays.asList(ipAddress);
         List<Discovery> taskList = new ArrayList<>();
 
+        List<Future<String>> list = new ArrayList<>();
+
         ipAddressList.forEach(ipAddr -> {
             Discovery discovery = new Discovery(ipAddr);
-           // Future<String> response = service.submit(discovery);
-           /*try {
-                System.out.println("Response :" + response.get());
-            } catch (Exception e) {
-                e.printStackTrace();
-            } */
+            //Future<String> response = service.submit(discovery);
+            //list.add(response);
             taskList.add(discovery);
         });
 
-        List<Future<String>> response = service.invokeAll(taskList);
+      List<Future<String>> futureList = service.invokeAll(taskList);
 
-        response.forEach(res -> {
+
+        list.forEach(res -> {
             try {
                 System.out.println(res.get());
             } catch (Exception e) {
                 e.printStackTrace();
             }
         });
+
 
         service.shutdown();
 

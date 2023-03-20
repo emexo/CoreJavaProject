@@ -1,4 +1,4 @@
-package com.example.thread.executor;
+package com.emexo.thread.executor;
 
 import java.util.concurrent.Callable;
 

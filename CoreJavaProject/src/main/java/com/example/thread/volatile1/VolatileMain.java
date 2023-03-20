@@ -1,4 +1,4 @@
-package com.example.thread.volatile1;
+package com.emexo.thread.volatile1;
 
 public class VolatileMain {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package com.example.thread.cyclicbarrier;
+package com.emexo.thread.cyclicbarrier;
 
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
@@ -45,7 +45,7 @@ public class CyclicBarrierExample {
         t2.start();
         t3.start();
 
-        cb.reset();
+        //cb.reset();
 
     }
 }

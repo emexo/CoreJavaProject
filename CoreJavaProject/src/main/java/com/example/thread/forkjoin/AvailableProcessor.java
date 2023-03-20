@@ -1,4 +1,4 @@
-package com.example.thread.forkjoin;
+package com.emexo.thread.forkjoin;
 
 public class AvailableProcessor {
     public static void main(String[] args) {

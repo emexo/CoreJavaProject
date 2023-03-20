@@ -1,14 +1,11 @@
-package com.example.thread.basics;
+package com.emexo.thread.basics;
 
-public class SharedResource {
+public class SharedResource  {
 
-
-    public  synchronized void  sharedMethod() {
-        System.out.println("Shared Resource Start : " + Thread.currentThread().getName());
+    public synchronized void  sharedMethod(String ipAddress) {
+        System.out.println("Shared Resource Start : " + Thread.currentThread().getName() +" and "+ ipAddress);
         try {
-            //Thread.sleep(30000);
-            wait(30000);
-            //Thread.yield();
+            wait(6000);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -19,7 +16,7 @@ public class SharedResource {
         System.out.println("Shared Resource Start : " + Thread.currentThread().getName());
         synchronized(SharedResource.class) {  //synchronized block
             try {
-                Thread.sleep(30000);
+                Thread.sleep(60000);
                 //wait(30000);
                 //Thread.yield();
             } catch (Exception e) {

@@ -1,4 +1,4 @@
-package com.example.thread.basics;
+package com.emexo.thread.basics;
 
 public class RunnableTask implements  Runnable {
 
@@ -14,7 +14,7 @@ public class RunnableTask implements  Runnable {
     @Override
     public void run() {
         //System.out.println("New Thread Start: " + Thread.currentThread().getName() + " IPAddress: " + ipAddress);
-        sharedResource.sharedMethod();
+        sharedResource.sharedMethod(ipAddress);
         //System.out.println("New Thread End: " + Thread.currentThread().getName() + " IPAddress: " + ipAddress);
 
     }

@@ -1,4 +1,4 @@
-package com.example.thread.basics;
+package com.emexo.thread.basics;
 
 public class ThreadClassMain {
     public static void main(String[] args) {

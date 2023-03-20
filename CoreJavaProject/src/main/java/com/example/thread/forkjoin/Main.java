@@ -1,4 +1,4 @@
-package com.example.thread.forkjoin;
+package com.emexo.thread.forkjoin;
 
 import java.util.List;
 import java.util.concurrent.ForkJoinPool;
@@ -8,6 +8,7 @@ public class Main {
     public static void main(String[] args)  {
         //Create ForkJoinPool using the default constructor.
         ForkJoinPool pool = new ForkJoinPool();
+
         //Create three FolderProcessor tasks. Initialize each one with a different folder path.
         FolderProcessor system = new FolderProcessor("C:\\Users\\pc\\Desktop\\SpringProject", "log");
         FolderProcessor apps = new FolderProcessor("C:\\logs", "log");

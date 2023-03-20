@@ -1,4 +1,4 @@
-package com.example.thread.basics;
+package com.emexo.thread.basics;
 
 public class ThreadClass extends Thread {
     private  String ipAddress;
@@ -9,6 +9,12 @@ public class ThreadClass extends Thread {
 
     @Override
     public void run() {
+        System.out.println("Enter the run metrhod : " + Thread.currentThread().getName());
+        try {
+            Thread.sleep(6000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         System.out.println("New Thread : " + Thread.currentThread().getName() + " IPAddress: " + ipAddress);
     }
 

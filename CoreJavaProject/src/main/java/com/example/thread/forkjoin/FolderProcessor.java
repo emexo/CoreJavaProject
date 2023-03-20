@@ -1,4 +1,4 @@
-package com.example.thread.forkjoin;
+package com.emexo.thread.forkjoin;
 
 import java.io.File;
 import java.util.ArrayList;
