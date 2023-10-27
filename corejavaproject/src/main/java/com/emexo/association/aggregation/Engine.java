@@ -14,8 +14,5 @@ public class Engine {
         System.out.println(engineType);
     }
 
-    @Override
-    public void finalize() {
-        System.out.println("Destroy Engine Object");
-    }
+
 }
