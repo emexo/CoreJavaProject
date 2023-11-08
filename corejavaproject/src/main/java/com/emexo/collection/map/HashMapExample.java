@@ -25,24 +25,30 @@ public class HashMapExample {
         employee4.setAddress("BLR");
 
         Employee employee5 = new Employee();
-        employee5.setEmployeeId(24);
-        employee5.setEmployeeName("Neha555");
+        employee5.setEmployeeId(19);
+        employee5.setEmployeeName("Neha5555");
         employee5.setAddress("BLR555");
 
-        Map<Integer, Employee> employeeMap = new Hashtable<>();
+        Map<Employee, Integer> employeeMap = new HashMap<>();
 
-        employeeMap.put(employee1.getEmployeeId(), employee1);
-        employeeMap.put(employee2.getEmployeeId(), employee2);
-        employeeMap.put(employee3.getEmployeeId(), employee3);
-        employeeMap.put(employee4.getEmployeeId(), employee4);
-        employeeMap.put(4, employee5);
-
-        employeeMap.get(1);
-
-        employeeMap.forEach((key, value)->{
-            System.out.println(key + " : "+ value);
-        });
+        employeeMap.put(employee1, employee1.getEmployeeId());
+        employeeMap.put(employee2, employee2.getEmployeeId());
+        employeeMap.put(employee3, employee3.getEmployeeId());
+        employeeMap.put(employee4, employee4.getEmployeeId());
+        employeeMap.put(employee5, employee5.getEmployeeId());
 
 
+        employeeMap.get(employee1);
+
+     /*   employeeMap.forEach((k, v)->{
+            System.out.println(k + " : "+ v);
+        });*/
+
+// before java 8 - for each
+       Set<Map.Entry<Employee, Integer>> employeeSet = employeeMap.entrySet();
+
+       for(Map.Entry<Employee, Integer> entry: employeeSet){
+           System.out.println(entry.getKey() + " : "+ entry.getValue());
+       }
     }
 }
