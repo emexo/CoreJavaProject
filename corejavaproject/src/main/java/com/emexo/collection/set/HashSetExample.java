@@ -1,7 +1,9 @@
 package com.emexo.collection.set;
 
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Set;
+import java.util.TreeSet;
 
 public class HashSetExample {
     public static void main(String[] args) {
@@ -21,27 +23,29 @@ public class HashSetExample {
         employee3.setAddress("BLR");
 
         Employee employee4 = new Employee();
-        employee4.setEmployeeId(19);
+        employee4.setEmployeeId(9);
         employee4.setEmployeeName("Neha");
         employee4.setAddress("BLR");
 
-        Set<Employee> employeeSet = new HashSet<>();
+        Set<Employee> employeeSet = new TreeSet<>();
         employeeSet.add(employee1);
         employeeSet.add(employee2);
         employeeSet.add(employee3);
         employeeSet.add(employee4);
+        employeeSet.add(employee4);
 
         System.out.println("Size: " +employeeSet.size());
+
 
         employeeSet.forEach(employee -> {
             System.out.println(employee.getEmployeeId() + " : "+ employee.getEmployeeName()+
                     " : "+ employee.getAddress());
         });
 
-/*        employeeSet.stream().filter(employee -> employee.getAddress().equals("BLR")).forEach(employee -> {
+        employeeSet.stream().filter(employee -> employee.getAddress().equals("BLR")).forEach(employee -> {
             System.out.println(employee.getEmployeeId() + " : " + employee.getEmployeeName() +
                     " : " + employee.getAddress());
-        });*/
+        });
 
     }
 }

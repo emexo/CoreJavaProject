@@ -19,8 +19,6 @@ public class ConditionalStatementExample {
                 report = "APAC Report";
                 break;
             case "EMEA":
-                report = "EMEA Report";
-                break;
             case "NA":
                 report ="NA Report";
                 break;

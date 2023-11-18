@@ -7,17 +7,17 @@ public interface Report {
 
     String generateReport();
 
-    public default void sort() {
+    public default void sort() {  // java 8
         System.out.println("Sort the report");
         privateMethod();
     }
 
-    public default void stream() {
+    public static void stream() {
         System.out.println("Sort the report");
-        privateMethod();
+        //privateMethod();
     }
 
-    private void privateMethod(){
+    private void privateMethod(){ //  java 11
         System.out.println("private Method");
     }
 }

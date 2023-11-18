@@ -1,15 +1,15 @@
 package com.emexo.serialization;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import lombok.extern.slf4j.Slf4j;
+
 
 import java.io.Serializable;
 
 // convert object into byte- serialization
 // convert byte into Object - deserialization
 
+@Slf4j
 public class Employee implements Serializable {
-    private static final Logger LOGGER = LogManager.getLogger(Employee.class);
 
     public static final long serialVersionUID = 788886693750L;
 
@@ -24,7 +24,7 @@ public class Employee implements Serializable {
     }
 
     public void getEmpDetails(){
-        LOGGER.info("Employee Id:{}, and Employee Name:{}",employeeId, employeeName );
+        log.info("Employee Id:{}, and Employee Name:{}",employeeId, employeeName );
     }
 
     @Override

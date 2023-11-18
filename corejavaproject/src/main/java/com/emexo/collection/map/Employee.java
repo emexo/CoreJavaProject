@@ -4,10 +4,12 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.util.Objects;
+
 @ToString
 @Getter
 @Setter
-public class Employee implements Comparable<Employee> {
+public class Employee /*implements Comparable<Employee>*/ {
     private int employeeId;
     private String employeeName;
     private String address;
@@ -36,9 +38,10 @@ public class Employee implements Comparable<Employee> {
         return result;
     }
 
-    @Override
+
+   /* @Override
     public int compareTo(Employee emp) {
         //return this.getEmployeeName().compareTo(emp.getEmployeeName());
         return this.getEmployeeId() - emp.getEmployeeId();
-    }
+    }*/
 }

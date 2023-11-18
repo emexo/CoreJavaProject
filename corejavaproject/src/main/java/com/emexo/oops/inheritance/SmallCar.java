@@ -8,6 +8,7 @@ public class SmallCar extends Car{
 
     public void getSmallCarDetails(){
         System.out.print(noDoors);
+        engine();
     }
     @Override
     public Integer engine(String model) throws Exception{

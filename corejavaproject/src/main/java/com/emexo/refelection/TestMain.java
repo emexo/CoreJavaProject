@@ -1,16 +1,15 @@
 package com.emexo.refelection;
 
 import com.emexo.serialization.Employee;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import lombok.extern.slf4j.Slf4j;
+
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.Arrays;
-
+@Slf4j
 public class TestMain {
-    private static final Logger log = LogManager.getLogger(TestMain.class);
 
     public static void main(String[] args) throws Exception {
         Customer customer = new Customer();
