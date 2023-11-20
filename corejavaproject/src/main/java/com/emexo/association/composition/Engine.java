@@ -1,4 +1,4 @@
-package com.emexo.association.aggregation;
+package com.emexo.association.composition;
 
 public class Engine {
     private int engineNumber;
@@ -15,6 +15,8 @@ public class Engine {
     }
 
     public void finalize(){
-        System.out.println("Destroy the engine object");
+        System.out.println("Destroying the Engine object");
     }
+
+
 }

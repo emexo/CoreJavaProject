@@ -1,14 +1,14 @@
-package com.emexo.association.aggregation;
+package com.emexo.association.composition;
 
 public class Car {
     private int model;
     private String type;
-    private Engine engine;
+    private final Engine engine;
 
-    public Car(int model, String type, Engine engine) {
+    public Car(int model, String type, int engineNumber, String engineType) {
         this.model = model;
         this.type = type;
-        this.engine = engine;
+        this.engine = new Engine(engineNumber,engineType);
     }
 
     public void getCarDetails(){
