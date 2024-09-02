@@ -1,12 +1,12 @@
-package com.emexo.java8.streaming;
+package com.emexo.java8.stream;
 
-import org.apache.commons.collections4.CollectionUtils;
+import lombok.extern.log4j.Log4j2;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
-
-public class TestMain {
+@Log4j2
+public class StudentMain {
     public static void main(String[] args) {
         List<Student> listStudents = new ArrayList<>();
 
@@ -21,22 +21,14 @@ public class TestMain {
         listStudents.add(new Student("Ivan", 66));
         listStudents.add(new Student("John", 52));
 
-        // without stream
-        int sum = 0;
-        if(CollectionUtils.isNotEmpty(listStudents)){
-            for(Student student: listStudents){
-                sum += student.getScore();
-            }
-        }
+       List<Student> students = listStudents.parallelStream()
+               .filter(student -> student.getScore()>=70).collect(Collectors.toList());
+       //log.info(students);
 
-        double average = sum/listStudents.size();
-        System.out.println(average);
+       double average = listStudents.stream().mapToInt(student -> student.getScore()).average().getAsDouble();
+      // log.info("Average:{}", average);
 
-
-        // with streaming
-
-        List<Student> list = listStudents.stream().filter(student -> student.getScore() >=70).collect(Collectors.toList());
-        System.out.println(list);
-
+      List<Student> students1 = listStudents.parallelStream().sorted().limit(3).collect(Collectors.toList());
+      log.info(students1);
     }
 }

@@ -8,13 +8,19 @@ import java.util.Date;
 
 public class TestMain {
     public static void main(String[] args) {
-        /*System.out.println(LocalDate.now());
+
+
+        System.out.println(LocalDate.now());
         System.out.println(LocalDate.of(2020, 05, 31));
         System.out.println(LocalDate.parse("2020-05-31"));
-        System.out.println(LocalDate.now().minusDays(2));
-        System.out.println(LocalDate.now().minus(2, ChronoUnit.YEARS));*/
+        System.out.println(LocalDate.now().plusDays(1));
+        System.out.println(LocalDate.now().plus(1, ChronoUnit.MONTHS));
 
-        System.out.println(LocalDateTime.now());
+        System.out.println(LocalDate.now().minusDays(2));
+        System.out.println(LocalDate.now().minus(2, ChronoUnit.YEARS));
+        System.out.println(LocalDate.now().getDayOfMonth());
+
+
 
     }
 }
