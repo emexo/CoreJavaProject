@@ -1,8 +1,10 @@
-package com.emexo.java8.stream;
+package com.corejavaproject.java8.stream;
 
+import lombok.extern.java.Log;
 import lombok.extern.log4j.Log4j2;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 @Log4j2
@@ -21,14 +23,24 @@ public class StudentMain {
         listStudents.add(new Student("Ivan", 66));
         listStudents.add(new Student("John", 52));
 
-       List<Student> students = listStudents.parallelStream()
-               .filter(student -> student.getScore()>=70).collect(Collectors.toList());
-       //log.info(students);
+        List<Student> goodStudents = new ArrayList<>();
+        listStudents.forEach(student -> {
+            if(student.getScore() >=70){
+                goodStudents.add(student);
+            }
+        });
 
-       double average = listStudents.stream().mapToInt(student -> student.getScore()).average().getAsDouble();
-      // log.info("Average:{}", average);
 
-      List<Student> students1 = listStudents.parallelStream().sorted().limit(3).collect(Collectors.toList());
-      log.info(students1);
+       List<Student> goodStudentList = listStudents.stream().filter(student -> student.getScore() >70).collect(Collectors.toList());
+
+       listStudents.stream().mapToInt(stu -> stu.getScore()).average().getAsDouble();
+
+      List<String> top3Students = listStudents.stream().sorted().limit(3).parallel().map(student -> student.getName()).collect(Collectors.toList());
+        log.info(top3Students);
     }
+
+    // order1 -- address1
+    // order2 -- address1
+    // order3 -- address2
+    // order4 -- address3
 }

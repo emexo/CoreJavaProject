@@ -1,8 +1,6 @@
-package com.emexo.java8.stream;
+package com.corejavaproject.java8.stream;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 @Getter
 @Setter
@@ -17,7 +15,7 @@ public class Student implements Comparable<Student> {
     }
 
 
-    public int compareTo(Student another) {
-        return another.getScore() - this.score;
+    public int compareTo(Student student) {
+        return student.getScore() - this.score;
     }
 }
